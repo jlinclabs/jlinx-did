@@ -1,0 +1,31 @@
+{
+  "name": "jlinx-did",
+  "version": "0.0.1",
+  "description": "A node module to create JLINX DIDs",
+  "private": true,
+  "main": "./jlinx-did/index.js",
+  "scripts": {
+    "test": "./scripts/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlinclabs/jlinx-did.git"
+  },
+  "keywords": [
+    "node",
+    "JLINX",
+    "jlinclabs"
+  ],
+  "author": "JLINC Labs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jlinclabs/jlinx-did/issues"
+  },
+  "homepage": "https://github.com/jlinclabs/jlinx-did#readme",
+  "dependencies": {
+    "@jlinc/jwt": "^1.0.3",
+    "sodium": "^3.0.2",
+    "urlsafe-base64": "^1.0.0"
+  },
+  "devDependencies": {}
+}
