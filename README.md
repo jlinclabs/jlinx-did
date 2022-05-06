@@ -5,7 +5,7 @@ A node client to create JLINX DIDs
 
 ### DID client
 
-Recieves a Hypercore addressed DID and produces a DID document.
+Receives a Hypercore addressed DID and produces a DID document.
 
 ## Expected Usage
 
@@ -30,6 +30,9 @@ const checkKey = verified.payload.didDocument.verificationMethod.find((item) => 
 
 // this MUST return true (assumes publicKeyMultibase key is in base64url format)
 b64.decode(checkKey.substring(1,checkKey.length)).equals(b64.decode(verified.header.jwk.x));
+
+// the complete DID document
+console.log(verified.payload.didDocument);
 ```
 
 ## TODO:  tests!
