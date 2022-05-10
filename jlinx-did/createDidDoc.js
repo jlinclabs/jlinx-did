@@ -11,7 +11,6 @@ module.exports = function createDidDoc(options = {}) {
   if (!keys.encryptingPrivateKey) throw new Error('keys.encryptingPrivateKey is required');
   if (!did) throw new Error('did is required');
   if (!/^did:jlinx:[\w\-]+$/.test(did)) throw new Error('incorrect JLINX DID format');
-  if (!serverSecret) throw new Error('serverSecret is required');
 
   const created = this.now();
 
@@ -40,8 +39,10 @@ module.exports = function createDidDoc(options = {}) {
     ],
   };
 
-  const Jwt = jwt.signEdDsa({didDocument, serverSecret}, keys.signingPublicKey, keys.signingPrivateKey);
-  
+  if (typeof serverSecret === 'undefined' || !serverSecret) {
+    return didDocument;
+  }
 
+  const Jwt = jwt.signEdDsa({didDocument, serverSecret}, keys.signingPublicKey, keys.signingPrivateKey);
   return Jwt;
 };
