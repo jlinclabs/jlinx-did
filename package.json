@@ -1,9 +1,9 @@
 {
   "name": "jlinx-did",
-  "version": "0.0.1",
-  "description": "A node module to create JLINX DIDs",
-  "private": true,
-  "main": "./jlinx-did/index.js",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A node module to create JLINX DID Documents",
+  "main": "index.js",
   "scripts": {
     "test": "./scripts/test"
   },
@@ -24,7 +24,6 @@
   "homepage": "https://github.com/jlinclabs/jlinx-did#readme",
   "dependencies": {
     "@jlinc/jwt": "^1.0.3",
-    "sodium": "^3.0.2",
     "urlsafe-base64": "^1.0.0"
   },
   "devDependencies": {}
